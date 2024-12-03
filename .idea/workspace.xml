@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a70f6bf4-a858-4d72-ab8a-aeea168562f6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PracticaU3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/bbdd.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ejercicio1/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ejercicio1/Servidor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ejercicio2/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Ejercicio2/Servidor.java" afterDir="false" />
+    <list default="true" id="a70f6bf4-a858-4d72-ab8a-aeea168562f6" name="Changes" comment="Ejercicio 1, faltaria revisar y comentar">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio2/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio2/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ejercicio2/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio2/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +24,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Felip-Torres"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Felip-Torres/PracticaPSPU3",
+    "accountId": "4912fd9e-d518-4a4e-af1d-2f77a566fc89"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 2
 }]]></component>
@@ -43,7 +47,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Cliente 2.executor": "Run",
     "Application.Cliente.executor": "Run",
+    "Application.Ejercicio2.Cliente.executor": "Run",
+    "Application.Ejercicio2.Servidor.executor": "Run",
     "Application.Servidor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
@@ -57,13 +64,53 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Cliente">
+  <component name="RunManager" selected="Application.Cliente 2">
+    <configuration name="Cliente 1" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Ejercicio2.Cliente" />
+      <module name="PracticaU3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Cliente 2" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="Ejercicio2.Cliente" />
+      <module name="PracticaU3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ejercicio1.Cliente" />
       <module name="PracticaU3" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Ejercicio1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ejercicio2.Cliente" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ejercicio2.Cliente" />
+      <module name="PracticaU3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ejercicio2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ejercicio2.Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ejercicio2.Servidor" />
+      <module name="PracticaU3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ejercicio2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -84,8 +131,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Cliente" />
+      <item itemvalue="Application.Ejercicio2.Cliente" />
+      <item itemvalue="Application.Cliente 1" />
+      <item itemvalue="Application.Cliente 2" />
+      <item itemvalue="Application.Ejercicio2.Servidor" />
+      <item itemvalue="Application.Servidor" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Ejercicio2.Cliente" />
+        <item itemvalue="Application.Ejercicio2.Servidor" />
         <item itemvalue="Application.Cliente" />
         <item itemvalue="Application.Servidor" />
       </list>
@@ -107,12 +164,25 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733219063304</updated>
-      <workItem from="1733219064790" duration="4816000" />
+      <workItem from="1733219064790" duration="7704000" />
     </task>
+    <task id="LOCAL-00001" summary="Ejercicio 1, faltaria revisar y comentar">
+      <option name="closed" value="true" />
+      <created>1733225178024</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1733225178024</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ejercicio 1, faltaria revisar y comentar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 1, faltaria revisar y comentar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
