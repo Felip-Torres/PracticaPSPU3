@@ -1,12 +1,13 @@
 package Ejercicio2;
 
+import com.google.gson.Gson; // Importar Gson
 import java.io.*;
 import java.net.*;
-import java.util.*;
 
 public class Servidor {
     private static final int PORT = 3000;
     private static final String DIRECTORY = "conversaciones";
+    private static final Gson gson = new Gson(); // Instanciar Gson
 
     public static void main(String[] args) {
         File dir = new File(DIRECTORY);
@@ -40,22 +41,24 @@ public class Servidor {
                 String mensajeJson;
 
                 while ((mensajeJson = in.readLine()) != null) {
-                    Mensaje mensaje = parseJson(mensajeJson);
+                    // Convertir JSON a objeto Mensaje usando Gson
+                    Mensaje mensaje = gson.fromJson(mensajeJson, Mensaje.class);
 
-                    if (mensaje.getTexto().equalsIgnoreCase("adeu")) {
+                    if (mensaje.getTexto().equalsIgnoreCase("adios")||mensaje.getTexto().equalsIgnoreCase("adeu")) {
                         System.out.println("Chat finalizado por usuario: " + mensaje.getOrigen());
-                        out.println("Chat cerrado.");
-                        break;
                     }
 
                     String archivoConversacion = DIRECTORY + "/conversacion_" +
                             Math.min(mensaje.getOrigen(), mensaje.getDestino()) + "_" +
                             Math.max(mensaje.getOrigen(), mensaje.getDestino()) + ".txt";
 
+                    // Guardar el mensaje en el archivo sin sobrescribir
                     guardarMensajeEnArchivo(archivoConversacion, mensaje);
-                    String contenido = leerArchivo(archivoConversacion);
 
+                    // Leer el archivo de la conversación completa y enviarlo al cliente
+                    String contenido = leerArchivo(archivoConversacion);
                     out.println(contenido); // Enviar la conversación completa al cliente
+                    out.flush();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -71,6 +74,7 @@ public class Servidor {
         private void guardarMensajeEnArchivo(String archivo, Mensaje mensaje) {
             try (PrintWriter pw = new PrintWriter(new FileWriter(archivo, true))) {
                 pw.println(mensaje.getOrigen() + ": " + mensaje.getTexto());
+                pw.flush();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -87,40 +91,8 @@ public class Servidor {
                 e.printStackTrace();
             }
             contenido.append("---------------------------------");
+            contenido.append("\n;;;"); // Delimitador al final
             return contenido.toString();
-        }
-
-        private Mensaje parseJson(String json) {
-            // Parse manual del JSON con formato {"origen":NUM, "destino":NUM, "texto":"TEXTO"}
-            String[] partes = json.replace("{", "").replace("}", "").split(",");
-            int origen = Integer.parseInt(partes[0].split(":")[1].trim());
-            int destino = Integer.parseInt(partes[1].split(":")[1].trim());
-            String texto = partes[2].split(":")[1].trim().replace("\"", "");
-            return new Mensaje(origen, destino, texto);
-        }
-    }
-
-    static class Mensaje {
-        private int origen;
-        private int destino;
-        private String texto;
-
-        public Mensaje(int origen, int destino, String texto) {
-            this.origen = origen;
-            this.destino = destino;
-            this.texto = texto;
-        }
-
-        public int getOrigen() {
-            return origen;
-        }
-
-        public int getDestino() {
-            return destino;
-        }
-
-        public String getTexto() {
-            return texto;
         }
     }
 }

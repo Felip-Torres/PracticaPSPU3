@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a70f6bf4-a858-4d72-ab8a-aeea168562f6" name="Changes" comment="Ejercicio 1, faltaria revisar y comentar">
+    <list default="true" id="a70f6bf4-a858-4d72-ab8a-aeea168562f6" name="Changes" comment="Primer intento del ejercicio 2, tengo que arreglar algunos fallos">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/gson_2_10.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/libjson/gson-2.10.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Ejercicio2/Mensaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PracticaU3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PracticaU3.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ejercicio2/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio2/Cliente.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Ejercicio2/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ejercicio2/Servidor.java" afterDir="false" />
     </list>
@@ -24,21 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Felip-Torres"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Felip-Torres&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Felip-Torres/PracticaPSPU3",
-    "accountId": "4912fd9e-d518-4a4e-af1d-2f77a566fc89"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Felip-Torres/PracticaPSPU3&quot;,
+    &quot;accountId&quot;: &quot;4912fd9e-d518-4a4e-af1d-2f77a566fc89&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2phWybXJDOsJs5uBitqDvUWnjnS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,15 +52,18 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Cliente 1.executor": "Run",
     "Application.Cliente 2.executor": "Run",
     "Application.Cliente.executor": "Run",
     "Application.Ejercicio2.Cliente.executor": "Run",
     "Application.Ejercicio2.Servidor.executor": "Run",
     "Application.Servidor.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Usuario/Dropbox/dropbox/segundo/PSP/U3/PracticaU3",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -64,7 +72,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Cliente 2">
+  <component name="RunManager" selected="Application.Cliente">
     <configuration name="Cliente 1" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="Ejercicio2.Cliente" />
       <module name="PracticaU3" />
@@ -132,27 +140,27 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Cliente" />
-      <item itemvalue="Application.Ejercicio2.Cliente" />
       <item itemvalue="Application.Cliente 1" />
       <item itemvalue="Application.Cliente 2" />
+      <item itemvalue="Application.Cliente" />
+      <item itemvalue="Application.Ejercicio2.Cliente" />
       <item itemvalue="Application.Ejercicio2.Servidor" />
       <item itemvalue="Application.Servidor" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Ejercicio2.Cliente" />
-        <item itemvalue="Application.Ejercicio2.Servidor" />
         <item itemvalue="Application.Cliente" />
         <item itemvalue="Application.Servidor" />
+        <item itemvalue="Application.Ejercicio2.Servidor" />
+        <item itemvalue="Application.Ejercicio2.Cliente" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
       </set>
     </attachedChunks>
   </component>
@@ -164,7 +172,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1733219063304</updated>
-      <workItem from="1733219064790" duration="7704000" />
+      <workItem from="1733219064790" duration="10283000" />
+      <workItem from="1733295924990" duration="1047000" />
+      <workItem from="1733299662791" duration="2931000" />
+      <workItem from="1733418411287" duration="2222000" />
     </task>
     <task id="LOCAL-00001" summary="Ejercicio 1, faltaria revisar y comentar">
       <option name="closed" value="true" />
@@ -174,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733225178024</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Primer intento del ejercicio 2, tengo que arreglar algunos fallos">
+      <option name="closed" value="true" />
+      <created>1733228434085</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1733228434085</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,7 +201,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Ejercicio 1, faltaria revisar y comentar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejercicio 1, faltaria revisar y comentar" />
+    <MESSAGE value="Primer intento del ejercicio 2, tengo que arreglar algunos fallos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Primer intento del ejercicio 2, tengo que arreglar algunos fallos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
