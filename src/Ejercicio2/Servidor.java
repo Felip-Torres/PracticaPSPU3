@@ -1,6 +1,6 @@
 package Ejercicio2;
 
-import com.google.gson.Gson; // Importar Gson
+import com.google.gson.Gson;
 import java.io.*;
 import java.net.*;
 
@@ -22,7 +22,7 @@ public class Servidor {
                 new Thread(new ManejadorCliente(clientSocket)).start();
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error: " + e.getMessage());
         }
     }
 
@@ -52,21 +52,20 @@ public class Servidor {
                             Math.min(mensaje.getOrigen(), mensaje.getDestino()) + "_" +
                             Math.max(mensaje.getOrigen(), mensaje.getDestino()) + ".txt";
 
-                    // Guardar el mensaje en el archivo sin sobrescribir
                     guardarMensajeEnArchivo(archivoConversacion, mensaje);
 
                     // Leer el archivo de la conversación completa y enviarlo al cliente
                     String contenido = leerArchivo(archivoConversacion);
-                    out.println(contenido); // Enviar la conversación completa al cliente
+                    out.println(contenido);
                     out.flush();
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Error: " + e.getMessage());
             } finally {
                 try {
                     socket.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.out.println("Error: " + e.getMessage());
                 }
             }
         }
@@ -76,7 +75,7 @@ public class Servidor {
                 pw.println(mensaje.getOrigen() + ": " + mensaje.getTexto());
                 pw.flush();
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Error: " + e.getMessage());
             }
         }
 
@@ -88,7 +87,7 @@ public class Servidor {
                     contenido.append(linea).append("\n");
                 }
             } catch (IOException e) {
-                e.printStackTrace();
+                System.out.println("Error: " + e.getMessage());
             }
             contenido.append("---------------------------------");
             contenido.append("\n;;;"); // Delimitador al final

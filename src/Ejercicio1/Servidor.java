@@ -12,14 +12,17 @@ public class Servidor {
         try (ServerSocket serverSocket = new ServerSocket(port)) {
             System.out.println("Servidor en espera de conexiones...");
             Socket clientSocket = serverSocket.accept();
-            String comando="";
+            System.out.println("Conexion establecida");
+
+            // Crear flujos de entrada/salida
+            BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+            PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+
+            String comando = "";
+            //El servidor seguira esperando comandos del cliente hasta que llegue exit
             while (!exit) {
-                System.out.println("Conexion establecida");
-
-                try (BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                     PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true)) {
-
-                    while ((comando = in.readLine()) != null) {
+                try {
+                    if ((comando = in.readLine()) != null) {
                         if (comando.equals("exit")) {
                             exit = true;
                             System.out.println("Cerrando servidor...");
@@ -36,15 +39,18 @@ public class Servidor {
 
                         out.println(respuesta);
                     }
+                } catch (IOException e) {
+                    System.out.println("Error al manejar el comando: " + e.getMessage());
                 }
             }
             clientSocket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error en el servidor: " + e.getMessage());
         }
     }
 
-    private static synchronized List<String[]> leerBBDD() {
+    //Devuelve una lista con los datos de la base de datos
+    private static List<String[]> leerBBDD() {
         List<String[]> datos = new ArrayList<>();
         File archivo = new File("bbdd.txt");
 
@@ -58,22 +64,24 @@ public class Servidor {
                 datos.add(linea.split(","));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error al leer la base de datos: " + e.getMessage());
         }
 
         return datos;
     }
 
-    private static synchronized void escribirBBDD(List<String[]> datos) {
+    //Escribe la lista de datos en la base de datos
+    private static void escribirBBDD(List<String[]> datos) {
         try (PrintWriter pw = new PrintWriter(new FileWriter("bbdd.txt"))) {
-            for (String[] registro : datos) {
-                pw.println(String.join(",", registro));
+            for (String[] fila : datos) {
+                pw.println(String.join(",", fila));
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error al escribir en la base de datos: " + e.getMessage());
         }
     }
 
+    //Añade los datos a la base de datos
     private static String insertarDato(String id, String nombre, String apellido) {
         List<String[]> datos = leerBBDD();
 
@@ -88,25 +96,26 @@ public class Servidor {
         return "Dato insertado en la base de datos.";
     }
 
+    //Devuelve los datos de la id proporcionada
     private static String seleccionarDato(String id) {
         List<String[]> datos = leerBBDD();
 
-        for (String[] registro : datos) {
-            if (registro[0].equals(id)) {
-                return String.join(" ", registro);
+        for (String[] fila : datos) {
+            if (fila[0].equals(id)) {
+                return String.join(" ", fila);
             }
         }
 
         return "Error: Elemento no encontrado en la base de datos.";
     }
 
+    //Elimina los datos de la id proporcionada
     private static String eliminarDato(String id) {
         List<String[]> datos = leerBBDD();
 
-        for (Iterator<String[]> iterator = datos.iterator(); iterator.hasNext(); ) {
-            String[] registro = iterator.next();
-            if (registro[0].equals(id)) {
-                iterator.remove();
+        for (String[] fila : datos) {
+            if (fila[0].equals(id)) {
+                datos.remove(fila);
                 escribirBBDD(datos);
                 return "Dato eliminado de la base de datos.";
             }

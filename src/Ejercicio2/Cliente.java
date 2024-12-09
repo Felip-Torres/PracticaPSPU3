@@ -67,7 +67,7 @@ public class Cliente {
                 System.out.println(respuesta);
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error: " + e.getMessage());
         }
     }
 }
